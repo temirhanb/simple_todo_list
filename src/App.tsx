@@ -1,12 +1,13 @@
 import * as React from "react";
 import GlobalStyles from "@mui/material/GlobalStyles";
 
-import { BackGroundPage } from "./style";
+import { ContainerPage } from "./style";
+import { ColumnItem } from "./Compoents/Column";
 
 const App = () => {
 
   return (
-    <BackGroundPage>
+    <ContainerPage>
       <GlobalStyles
         styles={{
           body: {
@@ -15,11 +16,12 @@ const App = () => {
             minHeight: '100vh',
             maxWidth: '100vw',
             background: '#3c3c3c',
+            display: 'flex',
           }
         }}
       />
-
-    </BackGroundPage>
+      <ColumnItem/>
+    </ContainerPage>
   );
 }
 
