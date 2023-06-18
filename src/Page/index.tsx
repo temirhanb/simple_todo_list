@@ -3,12 +3,12 @@ import GlobalStyles from "@mui/material/GlobalStyles";
 import { ColumnItem } from "../Compoents/Column";
 import { AddColumn } from "../Compoents/AddColumn";
 import * as React from "react";
-import { useContext } from "react";
-import { CurrentUserContext } from "../state/context";
+import { useSelector } from "react-redux";
 
 export const MainPage = () => {
-  const {columns} = useContext(CurrentUserContext);
-
+  // @ts-ignore
+  const columns = useSelector((state) => state.columns);
+  console.log(columns)
   return (<ContainerPage>
       <GlobalStyles
         styles={{
@@ -22,7 +22,7 @@ export const MainPage = () => {
           }
         }}
       />
-      {columns.map((item, index) => <ColumnItem key={item + index}/>)}
+      {columns.map((item: any, index: any) => <ColumnItem key={item + index}/>)}
       <AddColumn/>
     </ContainerPage>
   )

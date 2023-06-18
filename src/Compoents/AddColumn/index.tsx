@@ -1,11 +1,12 @@
-import { useContext } from "react";
-import { CurrentUserContext } from "../../state/context";
+import { useDispatch } from "react-redux";
+import { addColumns } from "../../state/slices/columnsSlices";
 
 export const AddColumn = () => {
-  const context = useContext(CurrentUserContext);
-  console.log(context)
+  const dispatch = useDispatch();
+
   const handlerAddColumn = () => {
-    context.addColumn()
+    // @ts-ignore
+    dispatch(addColumns(12))
   }
 
   return (
