@@ -2,12 +2,16 @@ import React from "react";
 import { createSlice } from "@reduxjs/toolkit";
 
 interface IProps {
-  columns: Array<number>
+  id: number;
+  name: string;
+  title: string
 }
 
-const initialState: IProps = {
-  columns: [0],
-}
+const initialState: IProps[] = [
+  {id: 1, name: 'hello', title: 'world'},
+  {id: 2, name: 'hello', title: 'world'},
+  {id: 2, name: 'hello', title: 'world'}
+]
 
 const columnsSlices = createSlice({
   name: 'columns',

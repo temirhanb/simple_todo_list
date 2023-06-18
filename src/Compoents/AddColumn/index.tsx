@@ -5,8 +5,7 @@ export const AddColumn = () => {
   const dispatch = useDispatch();
 
   const handlerAddColumn = () => {
-    // @ts-ignore
-    dispatch(addColumns(12))
+    dispatch(addColumns())
   }
 
   return (

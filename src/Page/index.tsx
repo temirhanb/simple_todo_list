@@ -1,14 +1,17 @@
-import { ContainerPage } from "../style";
-import GlobalStyles from "@mui/material/GlobalStyles";
-import { ColumnItem } from "../Compoents/Column";
-import { AddColumn } from "../Compoents/AddColumn";
 import * as React from "react";
 import { useSelector } from "react-redux";
+import GlobalStyles from "@mui/material/GlobalStyles";
+import { ContainerPage } from "../style";
+import { ColumnItem } from "../Compoents/Column";
+import { AddColumn } from "../Compoents/AddColumn";
+
+import { RootState } from "../state";
 
 export const MainPage = () => {
-  // @ts-ignore
-  const columns = useSelector((state) => state.columns);
-  console.log(columns)
+
+  const columns = useSelector((state: RootState) => {
+    return state.columns;
+  });
   return (<ContainerPage>
       <GlobalStyles
         styles={{
@@ -22,7 +25,7 @@ export const MainPage = () => {
           }
         }}
       />
-      {columns.map((item: any, index: any) => <ColumnItem key={item + index}/>)}
+      {columns.map((item, index: number) => <ColumnItem {...item} key={item.id + index}/>)}
       <AddColumn/>
     </ContainerPage>
   )

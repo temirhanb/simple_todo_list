@@ -1,11 +1,19 @@
+import React from "react";
 import { ContainerColumn, HeaderColumn, HeaderColumnIconGear, HeaderColumnTitle } from "../../style/column";
 
-export const ColumnItem = () => {
+interface IProps {
+  id: number;
+  name: string;
+  title: string
+}
+
+export const ColumnItem: React.FC<IProps> = ({name}) => {
+  console.log(name)
   return (
     <ContainerColumn>
       <HeaderColumn>
         <HeaderColumnTitle>
-          Колонка 1
+          {name}
         </HeaderColumnTitle>
         <HeaderColumnIconGear src={'./icons/gear.svg'}/>
       </HeaderColumn>
