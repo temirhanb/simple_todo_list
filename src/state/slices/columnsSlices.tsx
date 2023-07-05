@@ -9,8 +9,8 @@ interface IProps {
 
 const initialState: IProps[] = [
   {id: 1, name: 'hello', title: 'world'},
-  {id: 2, name: 'hello', title: 'world'},
-  {id: 2, name: 'hello', title: 'world'}
+  {id: 2, name: 'hello1', title: 'world1'},
+  {id: 2, name: 'hello2', title: 'world2'}
 ]
 
 const columnsSlices = createSlice({

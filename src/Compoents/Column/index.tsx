@@ -8,7 +8,7 @@ interface IProps {
 }
 
 export const ColumnItem: React.FC<IProps> = ({name}) => {
-  console.log(name)
+
   return (
     <ContainerColumn>
       <HeaderColumn>
