@@ -9,9 +9,8 @@ import { RootState } from "../state";
 
 export const MainPage = () => {
 
-  const columns = useSelector((state: RootState) => {
-    return state.columns;
-  });
+  const columns = useSelector((state: RootState) => state.columns);
+
   return (<ContainerPage>
       <GlobalStyles
         styles={{
