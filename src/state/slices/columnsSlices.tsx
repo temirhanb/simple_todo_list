@@ -50,7 +50,6 @@ const columnsSlices = createSlice({
     },
     copyColumns: (state, action) => {
       const copyColumn = action.payload;
-
       state.push(copyColumn)
     },
     addColumnsTask: (state, action) => {
@@ -76,5 +75,5 @@ const columnsSlices = createSlice({
   }
 })
 
-export const {addColumns, deleteColumns, editNameColumns, addColumnsTask} = columnsSlices.actions;
+export const {addColumns, deleteColumns, editNameColumns, addColumnsTask, copyColumns} = columnsSlices.actions;
 export default columnsSlices.reducer;

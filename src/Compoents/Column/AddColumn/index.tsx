@@ -12,7 +12,8 @@ export const AddColumn = () => {
 
   return (
     <AddColumnButton onClick={handlerAddColumn}>
-      <AddCircleOutlineIcon color={'success'}/>
+      <AddCircleOutlineIcon />
+      <span>Добавить колонку</span>
     </AddColumnButton>
   )
 }

@@ -11,9 +11,7 @@ export const ColumnItem: React.FC<IColumnsSlices> = (props) => {
   return (
     <ContainerColumn>
       <HeaderColumn
-        name={props.name}
-        id={props.id}
-
+        {...props}
       />
       <TasksColumn tasks={props.tasks}/>
       <ButtonAddTask id={props.id}/>

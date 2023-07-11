@@ -1,15 +1,11 @@
 import { ContainerHeaderColumn, HeaderColumnIconGear, HeaderColumnTitle } from "../../../style/column";
 import React from "react";
 import { useDispatch } from "react-redux";
-import { deleteColumns, editNameColumns } from "../../../state/slices/columnsSlices";
+import { copyColumns, deleteColumns, editNameColumns, IColumnsSlices } from "../../../state/slices/columnsSlices";
 import { Menu, MenuItem } from "@mui/material";
 
-interface IProps {
-  id: number;
-  name: string;
-}
 
-export const HeaderColumn: React.FC<IProps> = ({id, name}) => {
+export const HeaderColumn: React.FC<IColumnsSlices> = ({id, name, tasks}) => {
   const dispatch = useDispatch();
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -22,6 +18,10 @@ export const HeaderColumn: React.FC<IProps> = ({id, name}) => {
   }
   const handlerEditColumn = () => {
     dispatch(editNameColumns({id, name: 'test title'}))
+    handleClose()
+  }
+  const handlerCopyColumn = () => {
+    dispatch(copyColumns({id: id + 'copy', name: 'copy ' + name, tasks}))
     handleClose()
   }
 
@@ -48,7 +48,7 @@ export const HeaderColumn: React.FC<IProps> = ({id, name}) => {
         onClose={handleClose}
       >
         <MenuItem onClick={handlerEditColumn}>Изменить имя списка</MenuItem>
-        <MenuItem onClick={handlerEditColumn}>Копировать список</MenuItem>
+        <MenuItem onClick={handlerCopyColumn}>Копировать список</MenuItem>
         <MenuItem onClick={handlerDeleteColumn}>Удалить список</MenuItem>
       </Menu>
     </ContainerHeaderColumn>

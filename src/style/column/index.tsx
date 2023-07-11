@@ -32,13 +32,15 @@ export const HeaderColumnIconGear = styled(SettingsIcon)`
 `
 
 export const AddColumnButton = styled.div`
-  width: 10vw;
-  height: auto;
+  width: 30vw;
+  height: 56px;
   margin: 5px;
   border-radius: 30px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+  background: #706f6f;
+  padding: 0 20px;
 
   &:hover {
     background: #b0b0b0;
@@ -64,7 +66,8 @@ export const TasksAddButton = styled.div`
   margin-bottom: 10px;
   margin-left: 20px;
   width: max-content;
-  &:hover{
+
+  &:hover {
     background: #22272b;
   }
 `

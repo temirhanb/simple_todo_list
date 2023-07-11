@@ -22,6 +22,7 @@ export const MainPage: React.FC = () => {
             minHeight: '100vh',
             maxWidth: '100vw',
             background: '#ffffff',
+            fontFamily: 'Lato',
             display: 'flex',
           }
         }}
