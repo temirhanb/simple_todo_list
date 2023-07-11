@@ -1,7 +1,7 @@
 import React from "react";
 import { ContainerColumn, HeaderColumn, HeaderColumnIconGear, HeaderColumnTitle } from "../../style/column";
 import { useDispatch } from "react-redux";
-import { deleteColumns } from "../../state/slices/columnsSlices";
+import { deleteColumns } from "@state/slices/columnsSlices";
 
 interface IProps {
   id: number;

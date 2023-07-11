@@ -7,7 +7,7 @@ import { AddColumn } from "../Compoents/AddColumn";
 
 import { RootState } from "../state";
 
-export const MainPage = () => {
+export const MainPage: React.FC = () => {
 
   const columns = useSelector((state: RootState) => state.columns);
 

@@ -25,3 +25,13 @@ export const HeaderColumnIconGear = styled.img`
   margin: 21px 37px 0 0;
   height: 30px;
 `
+
+export const AddColumnButton = styled.div`
+  width: 50px;
+  height: 100%;
+  border-radius: 30px;
+
+  :hover {
+    opacity: 0.9;
+  }
+`
