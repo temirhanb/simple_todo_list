@@ -5,8 +5,8 @@ interface Props {
   tasks: Array<{ id: number, name: string }>
 }
 
-export const TasksColumn: React.FC<Props> = ({tasks}) => {
-  console.log(tasks)
+export const TasksColumn = ({tasks}: Props): JSX.Element => {
+
   return (
     <ContainerTasks>
       {tasks.map(item => <TaskItem>{item.name}</TaskItem>)}
