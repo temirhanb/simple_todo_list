@@ -1,19 +1,24 @@
 import React from "react";
 import { ContainerColumn } from "../../style/column";
 import { HeaderColumn } from "./HeaderColumn";
+import { TasksColumn } from "./TasksColumn";
+import { IColumnsSlices } from "../../state/slices/columnsSlices";
+import { ButtonAddTask } from "./ButtonAddTask";
 
-interface IProps {
-  id: number;
-  name: string;
-}
 
-export const ColumnItem: React.FC<IProps> = (props) => {
+export const ColumnItem: React.FC<IColumnsSlices> = (props) => {
 
   return (
     <ContainerColumn>
       <HeaderColumn
-        {...props}
+        name={props.name}
+        id={props.id}
+
       />
+      <TasksColumn
+        tasks={props.tasks}>
+      </TasksColumn>
+      <ButtonAddTask id={props.id}/>
     </ContainerColumn>
   )
 }

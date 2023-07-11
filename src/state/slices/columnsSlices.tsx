@@ -1,13 +1,19 @@
 import React from "react";
 import { createSlice } from "@reduxjs/toolkit";
 
-interface IProps {
-  id: number;
-  name: string;
+export interface ITasks {
+  id: number,
+  name: string
 }
 
-const initialState: IProps[] = [
-  {id: 1, name: 'hello'},
+export interface IColumnsSlices {
+  id: number;
+  name: string;
+  tasks: Array<ITasks>
+}
+
+const initialState: IColumnsSlices[] = [
+  {id: 1, name: 'hello', tasks: [{id: 2, name: 'world'}]},
 ]
 
 const columnsSlices = createSlice({
@@ -16,9 +22,10 @@ const columnsSlices = createSlice({
   reducers: {
     addColumns: (state) => {
       const lengthState: number = state.length;
-      const newValue: IProps = {
+      const newValue: IColumnsSlices = {
         id: lengthState + 1,
         name: 'hello' + lengthState,
+        tasks: [{id: 2, name: 'world'}],
       }
       state.push(newValue)
     },
@@ -35,13 +42,39 @@ const columnsSlices = createSlice({
           return {
             id: element.id,
             name: nameItem,
+            tasks: element.tasks
           }
         }
         return element
       });
-    }
+    },
+    copyColumns: (state, action) => {
+      const copyColumn = action.payload;
+
+      state.push(copyColumn)
+    },
+    addColumnsTask: (state, action) => {
+
+      const idItem = action.payload;
+
+      return state.map((element) => {
+        if (element.id === idItem) {
+          const newTaskItem: ITasks = {
+            id: element.tasks.length + 1,
+            name: ''
+          }
+          const pushNewTask: Array<ITasks> = element.tasks
+          return {
+            id: element.id,
+            name: element.name,
+            tasks: [...pushNewTask, newTaskItem]
+          }
+        }
+        return element
+      });
+    },
   }
 })
 
-export const {addColumns, deleteColumns, editNameColumns} = columnsSlices.actions;
+export const {addColumns, deleteColumns, editNameColumns, addColumnsTask} = columnsSlices.actions;
 export default columnsSlices.reducer;

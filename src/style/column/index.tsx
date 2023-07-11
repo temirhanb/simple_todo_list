@@ -4,10 +4,13 @@ import SettingsIcon from '@mui/icons-material/Settings';
 export const ContainerColumn = styled.div`
   display: flex;
   width: 390px;
-  height: auto;
-  background: #282828;
+  background: #101204;
   border-radius: 30px;
+  max-height: 100%;
+  height: max-content;
+  position: relative;
   margin: 5px;
+  flex-direction: column;
 `
 
 export const ContainerHeaderColumn = styled.div`
@@ -40,4 +43,17 @@ export const AddColumnButton = styled.div`
   &:hover {
     background: #b0b0b0;
   }
+`
+
+export const ContainerTasks = styled.div`
+  margin: 20px;
+  max-width: 100%;
+  height: auto;
+`
+
+export const TaskItem = styled.div`
+  border-radius: 30px;
+  width: 100%;
+  padding: 10px;
+  background: #22272b;
 `

@@ -25,7 +25,7 @@ export const HeaderColumn: React.FC<IProps> = ({id, name}) => {
     handleClose()
   }
 
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -35,9 +35,11 @@ export const HeaderColumn: React.FC<IProps> = ({id, name}) => {
       <HeaderColumnTitle>
         {name}
       </HeaderColumnTitle>
-      <HeaderColumnIconGear
+      <div
         onClick={handleClick}
-      />
+      >
+        <HeaderColumnIconGear/>
+      </div>
       <Menu
         id="simple-menu"
         anchorEl={anchorEl}
@@ -45,8 +47,9 @@ export const HeaderColumn: React.FC<IProps> = ({id, name}) => {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <MenuItem onClick={handlerEditColumn}>Изменить имя колонки</MenuItem>
-        <MenuItem onClick={handlerDeleteColumn}>Удалить колонку</MenuItem>
+        <MenuItem onClick={handlerEditColumn}>Изменить имя списка</MenuItem>
+        <MenuItem onClick={handlerEditColumn}>Копировать список</MenuItem>
+        <MenuItem onClick={handlerDeleteColumn}>Удалить список</MenuItem>
       </Menu>
     </ContainerHeaderColumn>
   )
