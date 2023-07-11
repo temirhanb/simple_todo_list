@@ -1,6 +1,8 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import { addColumnsTask } from "../../../state/slices/columnsSlices";
+import { TasksAddButton } from "../../../style/column";
 
 interface IProps {
   id: number
@@ -13,6 +15,9 @@ export const ButtonAddTask: React.FC<IProps> = ({id}) => {
     dispatch(addColumnsTask(id))
   }
   return (
-    <button onClick={handlerAddTask}>add</button>
+    <TasksAddButton onClick={handlerAddTask}>
+      <AddCircleOutlineIcon/>
+      <span>Добавить задачу</span>
+    </TasksAddButton>
   )
 }

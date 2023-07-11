@@ -52,8 +52,19 @@ export const ContainerTasks = styled.div`
 `
 
 export const TaskItem = styled.div`
-  border-radius: 30px;
-  width: 100%;
+  border-radius: 5px;
   padding: 10px;
+  margin-bottom: 5px;
   background: #22272b;
+`
+
+export const TasksAddButton = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  width: max-content;
+  &:hover{
+    background: #22272b;
+  }
 `
