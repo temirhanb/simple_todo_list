@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
-import { addColumns } from "@state/slices/columnsSlices";
-import { AddColumnButton } from "@style/column";
+import { AddColumnButton } from "../../../style/column";
+import { addColumns } from "../../../state/slices/columnsSlices";
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 export const AddColumn = () => {
@@ -12,7 +12,7 @@ export const AddColumn = () => {
 
   return (
     <AddColumnButton onClick={handlerAddColumn}>
-      <AddCircleOutlineIcon/>
+      <AddCircleOutlineIcon color={'success'}/>
     </AddColumnButton>
   )
 }

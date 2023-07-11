@@ -4,11 +4,10 @@ import { createSlice } from "@reduxjs/toolkit";
 interface IProps {
   id: number;
   name: string;
-  title: string
 }
 
 const initialState: IProps[] = [
-  {id: 1, name: 'hello', title: 'world'},
+  {id: 1, name: 'hello'},
 ]
 
 const columnsSlices = createSlice({
@@ -20,16 +19,29 @@ const columnsSlices = createSlice({
       const newValue: IProps = {
         id: lengthState + 1,
         name: 'hello' + lengthState,
-        title: 'world' + lengthState
       }
       state.push(newValue)
     },
     deleteColumns: (state, action) => {
       const idItem = action.payload;
       return state.filter(({id}) => id !== idItem)
+    },
+    editNameColumns: (state, action) => {
+      const idItem = action.payload.id;
+      const nameItem = action.payload.name;
+
+      return state.map((element) => {
+        if (element.id === idItem) {
+          return {
+            id: element.id,
+            name: nameItem,
+          }
+        }
+        return element
+      });
     }
   }
 })
 
-export const {addColumns, deleteColumns} = columnsSlices.actions;
+export const {addColumns, deleteColumns, editNameColumns} = columnsSlices.actions;
 export default columnsSlices.reducer;

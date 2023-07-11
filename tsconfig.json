@@ -1,16 +1,7 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "incremental": true,
     "target": "es2021",
-    "paths": {
-      "@style/*": [
-        "src/style/*"
-      ],
-      "@state/*": [
-        "src/state/*"
-      ]
-    },
     "lib": [
       "dom",
       "es2021"

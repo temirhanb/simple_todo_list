@@ -1,14 +1,16 @@
 import styled from "@emotion/styled";
+import SettingsIcon from '@mui/icons-material/Settings';
 
 export const ContainerColumn = styled.div`
   display: flex;
   width: 390px;
-  height: 100%;
+  height: auto;
   background: #282828;
   border-radius: 30px;
+  margin: 5px;
 `
 
-export const HeaderColumn = styled.div`
+export const ContainerHeaderColumn = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -20,18 +22,22 @@ export const HeaderColumnTitle = styled.div`
   color: #F4F4F4;
   margin: 13px 0 0 37px;
 `
-export const HeaderColumnIconGear = styled.img`
+export const HeaderColumnIconGear = styled(SettingsIcon)`
   width: 30px;
   margin: 21px 37px 0 0;
   height: 30px;
 `
 
 export const AddColumnButton = styled.div`
-  width: 50px;
-  height: 100%;
+  width: 10vw;
+  height: auto;
+  margin: 5px;
   border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  :hover {
-    opacity: 0.9;
+  &:hover {
+    background: #b0b0b0;
   }
 `
