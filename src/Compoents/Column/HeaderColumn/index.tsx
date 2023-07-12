@@ -1,56 +1,32 @@
 import { ContainerHeaderColumn, HeaderColumnIconGear, HeaderColumnTitle } from "../../../style/column";
 import React from "react";
-import { useDispatch } from "react-redux";
-import { copyColumns, deleteColumns, editNameColumns, IColumnsSlices } from "../../../state/slices/columnsSlices";
-import { Menu, MenuItem } from "@mui/material";
+import { IColumnsSlices } from "../../../state/slices/columnsSlices";
+import { ColumnHeaderMenu } from "./ColumnHeaderMenu";
 
 
-export const HeaderColumn: React.FC<IColumnsSlices> = ({id, name, tasks}) => {
-  const dispatch = useDispatch();
+export const HeaderColumn: React.FC<IColumnsSlices> = (props) => {
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-  const handlerDeleteColumn = () => {
-    dispatch(deleteColumns(id))
-    handleClose()
-  }
-  const handlerEditColumn = () => {
-    dispatch(editNameColumns({id, name: 'test title'}))
-    handleClose()
-  }
-  const handlerCopyColumn = () => {
-    dispatch(copyColumns({id: id + 'copy', name: 'copy ' + name, tasks}))
-    handleClose()
-  }
 
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
     setAnchorEl(event.currentTarget);
   };
 
-
   return (
     <ContainerHeaderColumn>
       <HeaderColumnTitle>
-        {name}
+        {props.name}
       </HeaderColumnTitle>
       <div
         onClick={handleClick}
       >
         <HeaderColumnIconGear/>
       </div>
-      <Menu
-        id="simple-menu"
+      <ColumnHeaderMenu
         anchorEl={anchorEl}
-        keepMounted
-        open={Boolean(anchorEl)}
-        onClose={handleClose}
-      >
-        <MenuItem onClick={handlerEditColumn}>Изменить имя списка</MenuItem>
-        <MenuItem onClick={handlerCopyColumn}>Копировать список</MenuItem>
-        <MenuItem onClick={handlerDeleteColumn}>Удалить список</MenuItem>
-      </Menu>
+        setAnchorEl={setAnchorEl}
+        {...props}
+      />
     </ContainerHeaderColumn>
   )
 }
