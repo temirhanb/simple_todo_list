@@ -27,7 +27,7 @@ export const MainPage: React.FC = () => {
           }
         }}
       />
-      {columns.map((item, index: number) => <ColumnItem {...item} key={item.id + index}/>)}
+      {columns.map((item, index: number) => <ColumnItem {...item} key={item.id}/>)}
       <AddColumn/>
     </ContainerPage>
   )

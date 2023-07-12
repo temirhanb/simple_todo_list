@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useId } from "react";
 import { Menu, MenuItem } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { copyColumns, deleteColumns, editNameColumns, IColumnsSlices } from "../../../state/slices/columnsSlices";
@@ -18,19 +18,24 @@ export const ColumnHeaderMenu: React.FC<IProps & IColumnsSlices> = (
   }) => {
   const dispatch = useDispatch();
 
+  const newId = useId()
+
   const handleClose = () => {
     setAnchorEl(null);
   };
+
   const handlerDeleteColumn = () => {
     dispatch(deleteColumns(id))
     handleClose()
   }
+
   const handlerEditColumn = () => {
     dispatch(editNameColumns({id, name: 'test title'}))
     handleClose()
   }
+
   const handlerCopyColumn = () => {
-    dispatch(copyColumns({id: id + 'copy', name: 'copy ' + name, tasks}))
+    dispatch(copyColumns({id: newId, name: 'copy ' + name, tasks}))
     handleClose()
   }
 

@@ -1,19 +1,19 @@
 import React from "react";
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, nanoid } from "@reduxjs/toolkit";
 
 export interface ITasks {
-  id: number,
+  id: string,
   name: string
 }
 
 export interface IColumnsSlices {
-  id: number;
+  id: string;
   name: string;
   tasks: Array<ITasks>
 }
 
 const initialState: IColumnsSlices[] = [
-  {id: 1, name: 'hello', tasks: [{id: 2, name: 'world'}]},
+  {id: 'column-id-1', name: 'hello', tasks: [{id: 'task-id-1', name: 'world'}]},
 ]
 
 const columnsSlices = createSlice({
@@ -21,11 +21,15 @@ const columnsSlices = createSlice({
   initialState,
   reducers: {
     addColumns: (state) => {
+
       const lengthState: number = state.length;
+
+      const newId = nanoid(5);
+
       const newValue: IColumnsSlices = {
-        id: lengthState + 1,
+        id: newId,
         name: 'hello' + lengthState,
-        tasks: [{id: 2, name: 'world'}],
+        tasks: [{id: newId, name: 'world'}],
       }
       state.push(newValue)
     },
@@ -59,7 +63,7 @@ const columnsSlices = createSlice({
       return state.map((element) => {
         if (element.id === idItem) {
           const newTaskItem: ITasks = {
-            id: element.tasks.length + 1,
+            id: nanoid(5),
             name: ''
           }
           const pushNewTask: Array<ITasks> = element.tasks

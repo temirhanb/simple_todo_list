@@ -32,7 +32,7 @@ export const HeaderColumnIconGear = styled(SettingsIcon)`
 `
 
 export const AddColumnButton = styled.div`
-  width: 30vw;
+  width: 250px;
   height: 56px;
   margin: 5px;
   border-radius: 30px;
