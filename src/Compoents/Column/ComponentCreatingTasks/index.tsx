@@ -21,13 +21,14 @@ export const ComponentCreatingTasks: React.FC<IProps> = ({id, tasks}) => {
     createTasks,
     isOpenForm,
     handlerIsOpenForm,
-    handlerIsCloseForm
+    handlerIsCloseForm,
   } = useCreatingTask({id, tasks})
 
   return (
     <div>
       {isOpenForm ? (
-        <FormContainerCreatingTask onSubmit={createTasks.handleSubmit}>
+        <FormContainerCreatingTask
+          onSubmit={createTasks.handleSubmit}>
           <FormContainerCreatingTaskInput
             onChange={createTasks.handleChange}
             value={createTasks.values.name}
@@ -36,6 +37,8 @@ export const ComponentCreatingTasks: React.FC<IProps> = ({id, tasks}) => {
             sx={{
               input: {color: '#fff',}
             }}
+            error={typeof createTasks.errors.name === 'string'}
+            helperText={createTasks.errors.name}
           />
           <FormContainerCreatingTaskButtons>
             <Button type={'submit'} variant="contained">
@@ -52,6 +55,5 @@ export const ComponentCreatingTasks: React.FC<IProps> = ({id, tasks}) => {
         </TasksAddButton>
       )}
     </div>
-
   )
 }
