@@ -1,7 +1,7 @@
-import React, { useId } from "react";
+import React from "react";
 import { Menu, MenuItem } from "@mui/material";
-import { useDispatch } from "react-redux";
-import { copyColumns, deleteColumns, editNameColumns, IColumnsSlices } from "../../../state/slices/columnsSlices";
+import { IColumnsSlices } from "../../../state/slices/columnsSlices";
+import { useHeaderMenuItem } from "./hook/useHeaderMenuItem";
 
 interface IProps {
   setAnchorEl: (item: null | HTMLElement) => void;
@@ -16,32 +16,21 @@ export const ColumnHeaderMenu: React.FC<IProps & IColumnsSlices> = (
     setAnchorEl,
     anchorEl
   }) => {
-  const dispatch = useDispatch();
 
-  const newId = useId()
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
-  const handlerDeleteColumn = () => {
-    dispatch(deleteColumns(id))
-    handleClose()
-  }
-
-  const handlerEditColumn = () => {
-    dispatch(editNameColumns({id, name: 'test title'}))
-    handleClose()
-  }
-
-  const handlerCopyColumn = () => {
-    dispatch(copyColumns({id: newId, name: 'copy ' + name, tasks}))
-    handleClose()
-  }
+  const {
+    handlerEditColumn,
+    handlerDeleteColumn,
+    handleClose,
+    handlerCopyColumn
+  } = useHeaderMenuItem({
+    setAnchorEl,
+    id,
+    name,
+    tasks
+  })
 
   return (
     <Menu
-      id="simple-menu"
       anchorEl={anchorEl}
       keepMounted
       open={Boolean(anchorEl)}
