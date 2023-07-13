@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import SettingsIcon from '@mui/icons-material/Settings';
+import { TextField } from "@mui/material";
 
 export const ContainerColumn = styled.div`
   display: flex;
@@ -71,3 +72,25 @@ export const TasksAddButton = styled.div`
     background: #22272b;
   }
 `
+
+export const FormContainerCreatingTask = styled.form`
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  flex-direction: column;
+`;
+
+export const FormContainerCreatingTaskButtons = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5px;
+  width: 100%;
+`;
+
+export const FormContainerCreatingTaskInput = styled(TextField)`
+  border-radius: 5px;
+  margin-bottom: 5px;
+  background: #22272b;
+  width: 100%;
+`;

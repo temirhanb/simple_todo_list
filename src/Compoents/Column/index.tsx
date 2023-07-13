@@ -12,7 +12,7 @@ export const ColumnItem: React.FC<IColumnsSlices> = (props) => {
     <ContainerColumn>
       <HeaderColumn {...props}/>
       <TasksColumn tasks={props.tasks}/>
-      <ComponentCreatingTasks id={props.id}/>
+      <ComponentCreatingTasks id={props.id} tasks={props.tasks}/>
     </ContainerColumn>
   )
 }

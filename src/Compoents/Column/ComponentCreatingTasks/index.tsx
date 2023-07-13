@@ -1,32 +1,57 @@
 import React from "react";
-import { useDispatch } from "react-redux";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
-import { TasksAddButton } from "../../../style/column";
-import { useFormik } from "formik";
+import {
+  FormContainerCreatingTask,
+  FormContainerCreatingTaskButtons,
+  FormContainerCreatingTaskInput,
+  TasksAddButton
+} from "../../../style/column";
+import { Button } from "@mui/material";
+import { useCreatingTask } from "./hook/useCreatingTask";
+import CloseIcon from '@mui/icons-material/Close';
 
 interface IProps {
-  id: string
+  id: string;
+  tasks: Array<{ id: string, name: string }>
 }
 
-export const ComponentCreatingTasks: React.FC<IProps> = () => {
-  const dispatch = useDispatch();
+export const ComponentCreatingTasks: React.FC<IProps> = ({id, tasks}) => {
 
-  const createTasks = useFormik({
-    initialValues: {
-      name: '',
-    },
-    onSubmit: values => {
-      alert(JSON.stringify(values, null, 2));
-    },
-  });
-  const handlerAddTask = () => {
-    // dispatch(addColumnsTask(id))
-  }
+  const {
+    createTasks,
+    isOpenForm,
+    handlerIsOpenForm,
+    handlerIsCloseForm
+  } = useCreatingTask({id, tasks})
 
   return (
-    <TasksAddButton onClick={handlerAddTask}>
-      <AddCircleOutlineIcon/>
-      <span>Добавить задачу</span>
-    </TasksAddButton>
+    <div>
+      {isOpenForm ? (
+        <FormContainerCreatingTask onSubmit={createTasks.handleSubmit}>
+          <FormContainerCreatingTaskInput
+            onChange={createTasks.handleChange}
+            value={createTasks.values.name}
+            id="name"
+            variant="outlined"
+            sx={{
+              input: {color: '#fff',}
+            }}
+          />
+          <FormContainerCreatingTaskButtons>
+            <Button type={'submit'} variant="contained">
+              Добавить задачу
+            </Button>
+            <CloseIcon onClick={handlerIsCloseForm}/>
+          </FormContainerCreatingTaskButtons>
+
+        </FormContainerCreatingTask>
+      ) : (
+        <TasksAddButton onClick={handlerIsOpenForm}>
+          <AddCircleOutlineIcon/>
+          <span>Добавить задачу</span>
+        </TasksAddButton>
+      )}
+    </div>
+
   )
 }

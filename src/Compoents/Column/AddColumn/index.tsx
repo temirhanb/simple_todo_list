@@ -1,5 +1,5 @@
-import { AddColumnButton } from "../../../style/column";
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import { AddColumnButton } from "../../../style/column";
 import { useAddColumn } from "./hook/useAddColumn";
 
 export const AddColumn = () => {

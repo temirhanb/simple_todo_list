@@ -58,19 +58,16 @@ const columnsSlices = createSlice({
     },
     addColumnsTask: (state, action) => {
 
-      const idItem = action.payload;
+      const idItem = action.payload.id;
+      const newTasks = action.payload.tasks
 
       return state.map((element) => {
         if (element.id === idItem) {
-          const newTaskItem: ITasks = {
-            id: nanoid(5),
-            name: ''
-          }
-          const pushNewTask: Array<ITasks> = element.tasks
+
           return {
             id: element.id,
             name: element.name,
-            tasks: [...pushNewTask, newTaskItem]
+            tasks: newTasks
           }
         }
         return element
