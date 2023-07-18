@@ -6,4 +6,6 @@ export const Layout = styled.div`
   display: flex;
   width: 100%;
   height: 100%;
+  background: #020024FF;
+  background: linear-gradient(150deg, #020024FF 0%, #374566FF 35%, #3745668C 100%);
 `

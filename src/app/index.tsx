@@ -1,12 +1,14 @@
 import * as React from "react";
-import { LayoutBody } from "./styles";
+
 import { TaskListPage } from "../Page";
+
+import './index.css';
 
 export const App = () => {
 
   return (
-    <LayoutBody>
+    <div className={'app'}>
       <TaskListPage/>
-    </LayoutBody>
+    </div>
   );
 }
