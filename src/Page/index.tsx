@@ -2,7 +2,7 @@ import * as React from "react";
 import { useSelector } from "react-redux";
 import GlobalStyles from "@mui/material/GlobalStyles";
 
-import { ContainerPage } from "../style";
+import { ContainerPage } from "../app/style";
 
 import { ColumnItem } from "../Compoents/Column";
 import { AddColumn } from "../Compoents/Column/AddColumn";
@@ -13,7 +13,8 @@ export const MainPage: React.FC = () => {
 
   const columns = useSelector((state: RootState) => state.columns);
 
-  return (<ContainerPage>
+  return (
+    <ContainerPage>
       <GlobalStyles
         styles={{
           body: {
