@@ -1,7 +1,7 @@
 import React from "react";
 import { IColumnsSlices } from "../libs";
-import { ContainerColumn } from "../../../shared";
-import { ComponentCreatingTasks, HeaderColumn, TasksColumn } from "../../../features";
+import { ContainerColumn } from "shared/Column";
+import { ComponentCreatingTasks, HeaderColumn, TasksColumn } from "features/columns";
 
 
 export const ColumnItem: React.FC<IColumnsSlices> = (props) => {

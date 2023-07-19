@@ -1,10 +1,9 @@
 import * as React from "react";
 import { useSelector } from "react-redux";
 
-import { ColumnItem } from "../../widgets";
-import { AddColumn } from "../../features";
-import { RootState } from "../../app/providers/with-redux";
-
+import { RootState } from "app/providers/with-redux";
+import { AddColumn } from "entities/colums/component";
+import { ColumnItem } from "widgets/columns";
 import { Layout } from "./styles";
 
 export const TaskListPage: React.FC = () => {

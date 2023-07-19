@@ -1,6 +1,6 @@
 import React from "react";
-import { IColumnsSlices, ITasks } from "../../../../widgets";
-import { ContainerHeaderColumn, HeaderColumnIconGear, HeaderColumnTitle } from "../../../../shared";
+import { IColumnsSlices } from "widgets/columns";
+import { ContainerHeaderColumn, HeaderColumnIconGear, HeaderColumnTitle } from "shared/Column";
 import { ColumnMenu } from "../ColumnsMenu";
 
 

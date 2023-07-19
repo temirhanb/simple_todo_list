@@ -20,9 +20,11 @@
     "allowJs": true,
     "noFallthroughCasesInSwitch": true,
     "isolatedModules": true,
-    "noEmit": true
+    "noEmit": true,
+
   },
   "include": [
     "src"
-  ]
+  ],
+  "extends": "tsconfig.patch.json"
 }
