@@ -1,14 +1,14 @@
 import React from "react";
 import { Menu, MenuItem } from "@mui/material";
-import { IColumnsSlices } from "../../../state/slices/columnsSlices";
-import { useHeaderMenuItem } from "./hook/useHeaderMenuItem";
+import { useHeaderMenuItem } from "../../helper";
+import { IColumnsSlices } from "../../../../widgets";
 
 interface IProps {
   setAnchorEl: (item: null | HTMLElement) => void;
   anchorEl: null | HTMLElement
 }
 
-export const ColumnHeaderMenu: React.FC<IProps & IColumnsSlices> = (
+export const ColumnMenu: React.FC<IProps & IColumnsSlices> = (
   {
     id,
     name,

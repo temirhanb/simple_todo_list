@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux";
 import { useId, useState } from "react";
 import { useFormik } from "formik";
-import { addColumnsTask } from "../../../../state/slices/columnsSlices";
 import * as Yup from 'yup';
+import { addColumnsTask } from "../../../../widgets";
 
 interface IProps {
   id: string;

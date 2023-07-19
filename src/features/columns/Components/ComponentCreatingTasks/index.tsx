@@ -1,14 +1,14 @@
 import React from "react";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import { Button } from "@mui/material";
+import CloseIcon from '@mui/icons-material/Close';
+import { useCreatingTask } from "../../helper";
 import {
   FormContainerCreatingTask,
   FormContainerCreatingTaskButtons,
-  FormContainerCreatingTaskInput,
-  TasksAddButton
-} from "../../../style/column";
-import { Button } from "@mui/material";
-import { useCreatingTask } from "./hook/useCreatingTask";
-import CloseIcon from '@mui/icons-material/Close';
+  FormContainerCreatingTaskInput, TasksAddButton
+} from "../../../../shared";
+
 
 interface IProps {
   id: string;

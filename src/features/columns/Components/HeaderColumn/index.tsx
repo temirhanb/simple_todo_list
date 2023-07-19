@@ -1,7 +1,7 @@
-import { ContainerHeaderColumn, HeaderColumnIconGear, HeaderColumnTitle } from "../../../style/column";
 import React from "react";
-import { IColumnsSlices } from "../../../state/slices/columnsSlices";
-import { ColumnHeaderMenu } from "./ColumnHeaderMenu";
+import { IColumnsSlices, ITasks } from "../../../../widgets";
+import { ContainerHeaderColumn, HeaderColumnIconGear, HeaderColumnTitle } from "../../../../shared";
+import { ColumnMenu } from "../ColumnsMenu";
 
 
 export const HeaderColumn: React.FC<IColumnsSlices> = (props) => {
@@ -22,7 +22,7 @@ export const HeaderColumn: React.FC<IColumnsSlices> = (props) => {
       >
         <HeaderColumnIconGear/>
       </div>
-      <ColumnHeaderMenu
+      <ColumnMenu
         anchorEl={anchorEl}
         setAnchorEl={setAnchorEl}
         {...props}

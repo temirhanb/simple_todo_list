@@ -1,16 +1,7 @@
 import React from "react";
 import { createSlice, nanoid } from "@reduxjs/toolkit";
+import { IColumnsSlices } from "../libs";
 
-export interface ITasks {
-  id: string,
-  name: string
-}
-
-export interface IColumnsSlices {
-  id: string;
-  name: string;
-  tasks: Array<ITasks>
-}
 
 const initialState: IColumnsSlices[] = [
   {id: 'column-id-1', name: 'hello', tasks: [{id: 'task-id-1', name: 'world'}]},

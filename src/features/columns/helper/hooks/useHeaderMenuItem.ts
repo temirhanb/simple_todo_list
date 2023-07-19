@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { useId } from "react";
-import { copyColumns, deleteColumns, editNameColumns, IColumnsSlices } from "../../../../state/slices/columnsSlices";
+import { copyColumns, deleteColumns, editNameColumns, IColumnsSlices } from "../../../../widgets";
 
 interface IProps {
   setAnchorEl: (item: null | HTMLElement) => void;

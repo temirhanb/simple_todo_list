@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { addColumns } from "../../../../state/slices/columnsSlices";
+import { addColumns } from "../../../../widgets";
 
 export const useAddColumn = () => {
   const dispatch = useDispatch();
