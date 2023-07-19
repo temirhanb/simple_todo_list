@@ -7,7 +7,7 @@ import {
   FormContainerCreatingTask,
   FormContainerCreatingTaskButtons,
   FormContainerCreatingTaskInput, TasksAddButton
-} from "shared/Column";
+} from "../../../../shared";
 
 
 interface IProps {

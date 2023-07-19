@@ -1,6 +1,6 @@
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import { useAddColumn } from "../../helper";
-import { AddColumnButton } from "shared/Column";
+import { AddColumnButton } from "../../../../shared";
 
 export const AddColumn = () => {
 

@@ -1,9 +1,9 @@
 import * as React from "react";
 import { useSelector } from "react-redux";
 
-import { ColumnItem } from "widgets/columns";
-import { RootState } from "app/providers/with-redux";
-import { AddColumn } from "features/columns";
+import { RootState } from "../../app/providers/with-redux";
+import { ColumnItem } from "../../widgets";
+import { AddColumn } from "../../features";
 
 import { Layout } from "./styles";
 

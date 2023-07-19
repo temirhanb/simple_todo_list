@@ -1,7 +1,8 @@
 import React from "react";
-import { IColumnsSlices } from "widgets/columns";
-import { ContainerHeaderColumn, HeaderColumnIconGear, HeaderColumnTitle } from "shared/Column";
+
 import { ColumnMenu } from "../ColumnsMenu";
+import { IColumnsSlices } from "../../../../widgets";
+import { ContainerHeaderColumn, HeaderColumnIconGear, HeaderColumnTitle } from "../../../../shared";
 
 
 export const HeaderColumn: React.FC<IColumnsSlices> = (props) => {
