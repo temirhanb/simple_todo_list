@@ -1,5 +1,5 @@
 import React from "react";
-import { ContainerTasks, TaskItem } from "../../../../shared";
+import { ContainerTasks, TaskItem } from "shared/Column";
 
 interface Props {
   tasks: Array<{ id: string, name: string }>
