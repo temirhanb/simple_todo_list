@@ -1,8 +1,16 @@
 {
   "compilerOptions": {
     "incremental": true,
-    "baseUrl": "./src",
+    "baseUrl": "src",
     "target": "es2021",
+    "paths": {
+      "app/*" : ["app/*"],
+      "entities/*" : ["entities/*"],
+      "widgets/*" : ["widgets/*"],
+      "shared/*" : ["shared/*"],
+      "page/*" : ["Page/*"],
+      "features/*" : ["features/*"],
+    },
     "lib": [
       "dom",
       "es2021"

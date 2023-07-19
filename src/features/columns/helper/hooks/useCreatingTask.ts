@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { useId, useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from 'yup';
-import { addColumnsTask } from "../../../../widgets";
+import { addColumnsTask } from "widgets/columns";
 
 interface IProps {
   id: string;
@@ -27,7 +27,7 @@ export const useCreatingTask = ({id, tasks}: IProps) => {
     initialValues: {
       name: '',
     },
-    validationSchema:validation,
+    validationSchema: validation,
     onSubmit: (values, actions) => {
 
       const newTask = {id: newId, name: values.name}
@@ -40,7 +40,7 @@ export const useCreatingTask = ({id, tasks}: IProps) => {
     },
   });
 
-  const handlerIsCloseForm = () =>{
+  const handlerIsCloseForm = () => {
     createTasks.resetForm();
     setIsOpenForm(false)
   }
