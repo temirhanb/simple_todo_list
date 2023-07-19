@@ -1,12 +1,14 @@
-import 'tslib';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import store from "../state";
-import { Provider } from "react-redux";
+import * as React from "react";
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App/>
-  </Provider>,
-  document.getElementById('root'));
+import { TaskListPage } from "../Page";
+
+import './index.css';
+
+export const App = () => {
+
+  return (
+    <div className={'app'}>
+      <TaskListPage/>
+    </div>
+  );
+}
