@@ -3,6 +3,13 @@
     "incremental": true,
     "target": "es2021",
     "baseUrl": "src",
+    "paths": {
+      "pages": ["./pages"],
+      "app": ["./app"],
+      "shared": ["./shared"],
+      "features": ["./features"],
+      "widgets": ["./widgets"],
+    },
     "lib": [
       "dom",
       "es2021"
@@ -20,7 +27,7 @@
     "allowJs": true,
     "noFallthroughCasesInSwitch": true,
     "isolatedModules": true,
-    "noEmit": true,
+    "noEmit": true
   },
   "include": [
     "src"
