@@ -2,8 +2,8 @@ import * as React from "react";
 import { useSelector } from "react-redux";
 
 import { RootState } from "../../app/providers/with-redux";
-import { ColumnItem } from "../../widgets";
-import { AddColumn } from "../../features";
+import { ColumnItem } from "widgets/";
+import { AddColumn } from "features/";
 
 import { Layout } from "./styles";
 

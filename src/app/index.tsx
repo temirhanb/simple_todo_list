@@ -1,8 +1,6 @@
 import * as React from "react";
-
-import { TaskListPage } from "../Page";
-
 import './index.css';
+import { TaskListPage } from "pages/";
 
 export const App = () => {
 
