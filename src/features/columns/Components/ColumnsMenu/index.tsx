@@ -1,7 +1,7 @@
 import React from "react";
 import { Menu, MenuItem } from "@mui/material";
 import { useHeaderMenuItem } from "../../helper";
-import { IColumnsSlices } from "../../../../widgets";
+import { IColumnsSlices } from "widgets/";
 
 interface IProps {
   setAnchorEl: (item: null | HTMLElement) => void;
