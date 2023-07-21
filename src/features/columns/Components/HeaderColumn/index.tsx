@@ -3,7 +3,7 @@ import React from "react";
 import { ColumnMenu } from "../ColumnsMenu";
 import { IColumnsSlices } from "widgets/";
 import { ContainerHeaderColumn, HeaderColumnIconGear, InputBaseCustomStyle } from "shared/";
-import { useEditColumnName } from "../../helper/hooks/useEditColumnName";
+import { useEditColumnName } from "../../helper";
 
 export const HeaderColumn: React.FC<IColumnsSlices> = (props) => {
 
@@ -25,6 +25,7 @@ export const HeaderColumn: React.FC<IColumnsSlices> = (props) => {
           id="name"
           onChange={editColumnName.handleChange}
           value={editColumnName.values.name}
+          error={typeof editColumnName.errors.name === 'string'}
         />
       </form>
       <div
