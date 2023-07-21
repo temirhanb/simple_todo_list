@@ -27,18 +27,12 @@ export const useHeaderMenuItem = (
     handleClose()
   }
 
-  const handlerEditColumn = () => {
-    dispatch(editNameColumns({id, name: 'test title'}))
-    handleClose()
-  }
-
   const handlerCopyColumn = () => {
     dispatch(copyColumns({id: newId, name: 'copy ' + name, tasks}))
     handleClose()
   }
 
   return {
-    handlerEditColumn,
     handlerDeleteColumn,
     handlerCopyColumn,
     handleClose

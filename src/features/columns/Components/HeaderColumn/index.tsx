@@ -2,8 +2,8 @@ import React from "react";
 
 import { ColumnMenu } from "../ColumnsMenu";
 import { IColumnsSlices } from "widgets/";
-import { ContainerHeaderColumn, HeaderColumnIconGear, HeaderColumnTitle } from "shared/";
-
+import { ContainerHeaderColumn, HeaderColumnIconGear, InputBaseCustomStyle } from "shared/";
+import { useEditColumnName } from "../../helper/hooks/useEditColumnName";
 
 export const HeaderColumn: React.FC<IColumnsSlices> = (props) => {
 
@@ -13,11 +13,20 @@ export const HeaderColumn: React.FC<IColumnsSlices> = (props) => {
     setAnchorEl(event.currentTarget);
   };
 
+  const {editColumnName} = useEditColumnName({id: props.id, name: props.name})
+
   return (
     <ContainerHeaderColumn>
-      <HeaderColumnTitle>
-        {props.name}
-      </HeaderColumnTitle>
+      <form
+        onSubmit={editColumnName.handleSubmit}
+        onBlur={editColumnName.handleSubmit}
+      >
+        <InputBaseCustomStyle
+          id="name"
+          onChange={editColumnName.handleChange}
+          value={editColumnName.values.name}
+        />
+      </form>
       <div
         onClick={handleClick}
       >
