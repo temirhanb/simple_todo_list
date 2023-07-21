@@ -1,6 +1,6 @@
 import React from "react";
 import { Menu, MenuItem } from "@mui/material";
-import { useHeaderMenuItem } from "../../helper";
+import { useConfigMenuItems, useHeaderMenuItem } from "../../helper";
 import { IColumnsSlices } from "widgets/";
 
 interface IProps {
@@ -18,11 +18,15 @@ export const ColumnMenu: React.FC<IProps & IColumnsSlices> = (
   }) => {
 
   const {
-    handlerEditColumn,
-    handlerDeleteColumn,
     handleClose,
-    handlerCopyColumn
   } = useHeaderMenuItem({
+    setAnchorEl,
+    id,
+    name,
+    tasks
+  });
+
+  const menuItemsList = useConfigMenuItems({
     setAnchorEl,
     id,
     name,
@@ -36,9 +40,9 @@ export const ColumnMenu: React.FC<IProps & IColumnsSlices> = (
       open={Boolean(anchorEl)}
       onClose={handleClose}
     >
-      <MenuItem onClick={handlerEditColumn}>Изменить имя списка</MenuItem>
-      <MenuItem onClick={handlerCopyColumn}>Копировать список</MenuItem>
-      <MenuItem onClick={handlerDeleteColumn}>Удалить список</MenuItem>
+      {menuItemsList.map(({name, onClick}, index) => (
+        <MenuItem key={index} onClick={onClick}>{name}</MenuItem>
+      ))}
     </Menu>
   )
 }
