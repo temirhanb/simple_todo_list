@@ -14,7 +14,6 @@ export const useConfigMenuItems = (
   }: IProps & IColumnsSlices
 ) => {
   const {
-    handlerEditColumn,
     handlerDeleteColumn,
     handlerCopyColumn
   } = useHeaderMenuItem({
@@ -24,9 +23,6 @@ export const useConfigMenuItems = (
     tasks
   })
   return [
-    {
-      name: 'Изменить имя списка', onClick: handlerEditColumn,
-    },
     {
       name: 'Копировать список', onClick: handlerCopyColumn,
     },

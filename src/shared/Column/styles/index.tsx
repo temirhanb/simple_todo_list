@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import SettingsIcon from '@mui/icons-material/Settings';
-import { TextField } from "@mui/material";
+import { InputBase, TextField } from "@mui/material";
 
 export const ContainerColumn = styled.div`
   display: flex;
@@ -19,13 +19,15 @@ export const ContainerHeaderColumn = styled.div`
   justify-content: space-between;
   width: 100%;
 `
-export const HeaderColumnTitle = styled.div`
+
+export const InputBaseCustomStyle = styled(InputBase)`
   font-weight: 400;
   font-size: 36px;
   line-height: 43px;
   color: #F4F4F4;
   margin: 13px 0 0 37px;
 `
+
 export const HeaderColumnIconGear = styled(SettingsIcon)`
   width: 30px;
   margin: 21px 37px 0 0;
