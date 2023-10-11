@@ -6,6 +6,7 @@ import { ColumnItem } from "widgets/";
 
 import { Layout } from "./styles";
 import { AddColumn } from "features";
+import { TaskWidget } from "../../widgets/tasks/component";
 
 export const TaskListPage: React.FC = () => {
 
@@ -15,6 +16,7 @@ export const TaskListPage: React.FC = () => {
     <Layout>
       {columns.map((item) => <ColumnItem {...item} key={item.id}/>)}
       <AddColumn/>
+      <TaskWidget name={'test'}/>
     </Layout>
   )
 }
